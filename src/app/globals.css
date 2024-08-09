@@ -1,0 +1,290 @@
+@tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+
+  @layer base {
+    
+    :root {
+      --background: 0 0% 100%;
+      --foreground: 222.2 84% 4.9%;
+      --card: 0 0% 100%;
+      --card-foreground: 222.2 84% 4.9%;
+      --popover: 0 0% 100%;
+      --popover-foreground: 222.2 84% 4.9%;
+      /* #2563eb */
+      --primary: 221.2 83.2% 53.3%;
+      --primary-foreground: 210 40% 98%;
+      --secondary: 210 40% 96.1%;
+      --secondary-foreground: 222.2 47.4% 11.2%;
+      --muted: 210 40% 96.1%;
+      --muted-foreground: 215.4 16.3% 46.9%;
+      --accent: 210 40% 96.1%;
+      --accent-foreground: 222.2 47.4% 11.2%;
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 210 40% 98%;
+      --border: 214.3 31.8% 91.4%;
+      --input: 214.3 31.8% 91.4%;
+      --ring: 221.2 83.2% 53.3%;
+      --radius: 0.5rem;
+    }
+  
+    .dark {
+      --background: 222.2 84% 4.9%;
+      --foreground: 210 40% 98%;
+      --card: 222.2 84% 4.9%;
+      --card-foreground: 210 40% 98%;
+      --popover: 222.2 84% 4.9%;
+      --popover-foreground: 210 40% 98%;
+      --primary: 217.2 91.2% 59.8%;
+      --primary-foreground: 222.2 47.4% 11.2%;
+      --secondary: 217.2 32.6% 17.5%;
+      --secondary-foreground: 210 40% 98%;
+      --muted: 217.2 32.6% 17.5%;
+      --muted-foreground: 215 20.2% 65.1%;
+      --accent: 217.2 32.6% 17.5%;
+      --accent-foreground: 210 40% 98%;
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 210 40% 98%;
+      --border: 217.2 32.6% 17.5%;
+      --input: 217.2 32.6% 17.5%;
+      --ring: 224.3 76.3% 48%;
+    }
+  }
+  
+  .rotate-ring::before {
+    content: '';
+    position: absolute;
+    width: 93%;
+    height: 93%;
+    background-color: transparent;
+    border-radius: 50%;
+    border-width: 4px;
+    border-top-color: transparent;
+    border-right-color: hsl(var(--primary));
+    border-bottom-color: transparent;
+    border-left-color: hsl(var(--primary));
+    border-style: solid;
+    animation: rotateTheRing 10s linear infinite;
+  }
+
+  @keyframes rotateTheRing {
+    from{
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .time-line {
+    counter-reset: section;
+  }
+  .time-line .muted-line {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    transform: translateX(-50%);
+    z-index: 2;
+    @apply shadow-sm shadow-primary/80;
+  }
+  .time-line .the-line {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(var(--primary));
+    top: 0;
+    left: 0;
+    z-index: 1;
+    color: black;
+  }
+  .circle-eduction {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 30px;
+    width: 30px;
+    background-color: hsl(var(--muted));
+    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    transition: 0.5;
+    @apply shadow-md shadow-primary/35;
+  }
+  .time-line li.active .circle-eduction {
+    border-color: hsl(var(--primary));
+    transition: 0.3s;
+  }
+  .circle-eduction::after {
+    counter-increment: section;
+    content: counter(section);
+    top: 2px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    text-align: center;
+    margin-top: -1px;
+    z-index: 4;
+  }
+
+  .time-line li:nth-child(odd) > div {
+    left: 30px;
+    transform: translateX(-200%);
+  }
+  .time-line li:nth-child(even) > div {
+    transform: translateX(200%);
+    left: -430px;
+  }
+  .time-line li:nth-child(odd) > div .date{
+    left: 8px;
+  }
+  .time-line li:nth-child(even) > div .date {
+    right: 8px;
+  }
+
+  @media (max-width: 1024px) {
+    .time-line li > div {
+      left: 30px !important;
+    }
+  }
+
+  .last-circle {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    height: 30px;
+    width: 30px;
+    background-color: hsl(var(--muted));
+    border-radius: 50%;
+    border: 2px solid hsl(var(--border));
+    transform: translateX(-50%);
+    z-index: 3;
+    transition: 0.5;
+    cursor: pointer;
+    @apply shadow-md shadow-primary/35;
+  }
+  .last-circle.active {
+    border-color: hsl(var(--primary)) !important; 
+    transition: 0.3s;
+  }
+
+  .line-effect::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: hsl(var(--foreground));
+    border-radius: 10px;
+    transition: 0.5s;
+  }
+
+  .line-effect:hover:before {
+    width: 90%;
+  }
+
+  .typewriter-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(var(--muted));
+    border-left: 4px solid hsl(var(--primary));
+    animation: typewriter 3s steps(8) infinite, animationBorder 0.5s infinite;
+  }
+  @keyframes typewriter {
+    0% {
+      left: 0;
+      width: 100%;
+    }
+    50% {
+      left: 100%;
+      width: 0;
+    }
+    100% {
+      left: 0;
+      width: 100%;
+    }
+  }
+  @keyframes animationBorder {
+    from {
+      border-left-color: hsl(var(--primary));
+    }
+    to {
+      border-left-color: white;
+    }
+  }
+
+  .cover-image::before,
+  .cover-image::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    z-index: 1;
+  }
+  .cover-image::before {
+    top: -7px;
+    right: -7px;
+    border-top: 3px solid hsl(var(--primary));
+    border-right: 3px solid hsl(var(--primary));
+  }
+  .cover-image::after {
+    bottom: -7px;
+    left: -7px;
+    border-bottom: 3px solid hsl(var(--primary));
+    border-left: 3px solid hsl(var(--primary));
+  }
+
+
+
+  .spikes {
+    position: relative;
+  }
+
+  .spikes::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 30px;
+    z-index: 1;
+    background-image: linear-gradient(135deg, hsl(var(--background)) 25%, transparent 25%), linear-gradient(225deg, hsl(var(--background)) 25%, transparent 25%);
+    background-size: 30px 30px;
+  }
+
+  .text-shadow-primary {
+    text-shadow: 0px 0px 2.5px hsl(var(--primary));
+  }
+  .text-shadow-foreground {
+    text-shadow: 0px 0px 1.5px hsl(var(--foreground));
+  }
+
+  .dots {
+    background-image: url(/dots.png);
+    width: 150px;
+    height: 150px;
+    background-repeat: no-repeat;
+    position: absolute;
+  }
+
+  .parent-observe.show .show-observe,
+  .parent-observe.show.show-observe {
+    transform: translateX(0);
+    transition: 1s;
+  }
+
+
+  @layer base {
+    * {
+      @apply border-border;
+    }
+    body {
+      @apply bg-background text-foreground;
+    }
+  }
