@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { cn } from "@/lib/utils";
-import Navbar from "@/components/navigation/navbar";
+import { cn, revalidateTime } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider"
-import MobileNav from "@/components/navigation/mobile-nav";
-import Footer from "@/components/navigation/footer";
 
 const inter = Inter({ subsets: ["latin"] });
+
+export const revalidate = revalidateTime;
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -28,10 +27,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          <MobileNav />
+
           {children}
-          <Footer />
+          
         </ThemeProvider>
       </body>
     </html>
