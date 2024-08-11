@@ -15,7 +15,7 @@ const ScrollToTop = () => {
   return (
     <Button
         size="icon"
-        className={cn("fixed bottom-12 md:bottom-8 right-2 md:right-4 transition-transform duration-300 z-[99] group",
+        className={cn("fixed bottom-12 md:bottom-8 right-2 md:right-4 transition-transform duration-300 z-[105] group",
             !isDverScreen && "opacity-0 translate-y-6 pointer-events-none"
         )}
         onClick={()=>window.scrollTo(0, 0)}
