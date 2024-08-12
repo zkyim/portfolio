@@ -7,11 +7,11 @@ export const  socialLinks: SocialLink[] = [
         icon: Facebook
     },
     {
-        href: "http://github.com",
+        href: "https://github.com/zkyim",
         icon: Github
     },
     {
-        href: "http://linkedin.com",
+        href: "tellto://+2001030269257",
         icon: Linkedin
     },
 ];
