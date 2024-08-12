@@ -1,5 +1,5 @@
 import { SocialLink } from "@/components/types/interfaces";
-import { Facebook, Github, Linkedin } from "lucide-react";
+import { Facebook, Github, Phone } from "lucide-react";
 
 export const  socialLinks: SocialLink[] = [
     {
@@ -12,6 +12,6 @@ export const  socialLinks: SocialLink[] = [
     },
     {
         href: "tellto://+2001030269257",
-        icon: Linkedin
+        icon: Phone
     },
 ];
