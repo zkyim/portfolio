@@ -4,8 +4,8 @@ import Logo from "./logo"
 
 const Navbar = () => {
   return (
-    <header className="fixed top-0 left-0 py-2 border-b w-full bg-background/60 backdrop-blur-md z-50">
-        <div className="container py-2 flex items-center justify-between">
+    <header className="fixed top-0 left-0 py-2 md:py-4 border-b w-full bg-background/60 backdrop-blur-md z-50">
+        <div className="container flex items-center justify-between">
              <Logo />
              <nav className="hidden md:flex items-center gap-x-4">
                 {navLinks.map((link, index) =>(
