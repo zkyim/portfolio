@@ -16,7 +16,7 @@ const ProjectsSection = async () => {
       <Container id='projects' className="bg-muted">
         <section id='projects' className='relative'>
           <SectionTitle title='projects' description="some things i've built" className='mb-6'/>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 items-start sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {projects.map((project, index)=> (
               <PorjectItem key={index} project={project} />
             ))}
