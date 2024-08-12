@@ -56,11 +56,11 @@ const HomeSection = () => {
           Beginner in frontend developer web site and development knowledge,but producing quality work.
           </p>
           <div className="flex items-center gap-2 py-2">
-            <a href="#projects" className={cn(buttonVariants({size: "lg"}), "shadow-xl shadow-primary/15")}>
+            <a href="#projects" className={cn(buttonVariants({size: "lg"}), "shadow-xl shadow-primary/15 px-3 md:px-5")}>
               <span>my works</span>
               <ArrowRightCircle className="size-4" />
             </a>
-            <a href="/Blue Modern CV Resume.pdf" className={cn(buttonVariants({variant: "outline",size: "lg"}), "px-3 md:")} target="_blank" download={true}>
+            <a href="/Blue Modern CV Resume.pdf" className={cn(buttonVariants({variant: "outline",size: "lg"}), "px-3 md:px-5")} target="_blank" download={true}>
               <span>download CV</span>
               <Download className="size-4" />
             </a>
