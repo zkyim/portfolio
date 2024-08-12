@@ -37,7 +37,7 @@ const HomeSection = () => {
             const {href, icon:Icon} = link;
             return (
               <li key={index} className="hover:text-primary">
-                <a href={href}>
+                <a href={href} target="_blank">
                   <Icon className="size-4"/>
                 </a>
               </li>
@@ -60,7 +60,7 @@ const HomeSection = () => {
               <span>my works</span>
               <ArrowRightCircle className="size-4" />
             </a>
-            <a href="" className={buttonVariants({variant: "outline",size: "lg"})} target="_blank" download={true}>
+            <a href="/Blue Modern CV Resume.pdf" className={cn(buttonVariants({variant: "outline",size: "lg"}), "px-3 md:")} target="_blank" download={true}>
               <span>download CV</span>
               <Download className="size-4" />
             </a>
