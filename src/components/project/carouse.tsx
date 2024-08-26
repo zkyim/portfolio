@@ -17,7 +17,7 @@ const Carouse: React.FC<CarouseProps> = ({
     const [openedImage, setOpenedImage] = useState(urlFor(images[0]));
   return (
     <div className="flex flex-col space-y-2">
-        <div className="relative w-full aspect-video h-full">
+        <div className="relative w-full aspect-video">
             <Image 
                 src={currentImage} 
                 alt="image"
