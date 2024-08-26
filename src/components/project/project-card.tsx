@@ -14,7 +14,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <div className="w-full">
         <div className="inline-block group my-auto max-w-[350px] rounded-md border shadow-xl shadow-primary/10 dark:bg-black p-3">
-            <div className="relative rounded-sm w-full overflow-hidden">
+            <div className="relative aspect-video rounded-sm w-full overflow-hidden">
                 <Image 
                     src={imageUrl}
                     alt="image project"
