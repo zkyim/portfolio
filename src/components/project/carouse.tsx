@@ -30,7 +30,7 @@ const Carouse: React.FC<CarouseProps> = ({
             {images.map((image, index) => {
                 return (
                     <Suspense key={index} fallback={<Loader />}>
-                        <div className={cn("relative w-full min-h-20 max-h-35 overflow-hidden border border-2 border-black/40 hover:border-black rounded-md aspect-square", openedImage == urlFor(image) && "border-black")}>
+                        <div className={cn("relative w-full aspect-video min-h-20 max-h-35 overflow-hidden border border-2 border-black/40 hover:border-black rounded-md aspect-square", openedImage == urlFor(image) && "border-black")}>
                             <Image 
                                 fill
                                 src={urlFor(image)}
