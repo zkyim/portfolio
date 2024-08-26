@@ -5,7 +5,7 @@ import { buttonVariants } from "../ui/button";
 const Footer = () => {
     const currentYear = new Date().getFullYear();
   return (
-    <footer className="border-t py-x mb-[73px] md:mb-0 md:pd-4">
+    <footer className="border-t py-x mb-[70px] md:mb-0 md:pd-4">
       <div className="container py-3 flex flex-col md:flex-row items-center justify-between gap-y-4 px-14">
         <p className="text-sm">
             Copyright &copy; {currentYear}, All Rights Reserved.
