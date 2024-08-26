@@ -11,7 +11,7 @@ export const  socialLinks: SocialLink[] = [
         icon: Github
     },
     {
-        href: "tellto://+2001030269257",
+        href: "tel:+2001030269257",
         icon: Phone
     },
 ];
